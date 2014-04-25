@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A268CA39-1384-4C77-9DA8-DB37646F5E16}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.iTrip.Passport</RootNamespace>
+    <AssemblyName>WinStudio.iTrip.Passport</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\..\ref\thirdparty\autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mef">
+      <HintPath>..\..\..\..\ref\thirdparty\autofac\Autofac.Integration.Mef.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Integration.Mvc">
+      <HintPath>..\..\..\..\ref\thirdparty\autofac\Autofac.Integration.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="AutofacAutoResolver">
+      <HintPath>..\..\..\..\ref\winstudio\framework\AutofacAutoResolver.dll</HintPath>
+    </Reference>
+    <Reference Include="AutofacAutoResolverFlag, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\framework\AutofacAutoResolverFlag.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\ref\thirdparty\mongo\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\ref\thirdparty\mongo\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Repository, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\framework\MongoDB.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.AssemblyUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.AssemblyUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.ComResult, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.ComResult.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.DynamicLogger, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.DynamicLogger.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.HttpExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.HttpExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.Security, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.Serialization">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.StringExtensions">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.StringExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStuido.XmlExtensions">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStuido.XmlExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\iTripPassportController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Controllers\ProfileController.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Scripts\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Scripts\bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Scripts\bootstrap\css\docs.css" />
+    <Content Include="Scripts\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Scripts\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Scripts\bootstrap\js\assets\application.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-alert.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-button.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-carousel.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-collapse.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-dropdown.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-modal.js.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-popover.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-scrollspy.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-tab.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-tooltip.js" />
+    <Content Include="Scripts\bootstrap\js\assets\bootstrap-typeahead.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Nationalities.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\NativePlaces.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Account\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\business\permission\passport\WinStudio.iTrip.Permission.IPassport\WinStudio.iTrip.Permission.IPassport.csproj">
+      <Project>{2641872a-cf0f-4c48-b8c4-28e1b902b9ef}</Project>
+      <Name>WinStudio.iTrip.Permission.IPassport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\business\permission\passport\WinStudio.iTrip.Permission.PassportService\WinStudio.iTrip.Permission.PassportService.csproj">
+      <Project>{e22e5e31-4acd-46e0-af47-ea7ae2e8e6c3}</Project>
+      <Name>WinStudio.iTrip.Permission.PassportService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\business\WinStudio.iTrip.Business.Core\WinStudio.iTrip.Business.Core.csproj">
+      <Project>{104263c3-cc1a-4f5b-a931-9d56b840a59a}</Project>
+      <Name>WinStudio.iTrip.Business.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\business\WinStudio.iTrip.Business.ICore\WinStudio.iTrip.Business.ICore.csproj">
+      <Project>{fd417f1c-82b0-4c6e-8e65-165de5bdec40}</Project>
+      <Name>WinStudio.iTrip.Business.ICore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\WinStudio.iTrip.Core\WinStudio.iTrip.Core.csproj">
+      <Project>{bb88f23e-66f6-405d-b925-b637bbd18750}</Project>
+      <Name>WinStudio.iTrip.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\WinStudio.iTrip.Framework.Passport.IPermission\WinStudio.iTrip.Framework.Passport.IPermission.csproj">
+      <Project>{fe43ab79-81d5-43ab-be48-e8bbe38af1c1}</Project>
+      <Name>WinStudio.iTrip.Framework.Passport.IPermission</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\WinStudio.iTrip.Framework.Passport.Permission\WinStudio.iTrip.Framework.Passport.Permission.csproj">
+      <Project>{ac6bb9f0-4872-4c46-bec3-bc67c8219356}</Project>
+      <Name>WinStudio.iTrip.Framework.Passport.Permission</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\WinStudio.iTrip.Framework\WinStudio.iTrip.Framework.csproj">
+      <Project>{4e048050-79d1-494d-946f-4e8b000dff4d}</Project>
+      <Name>WinStudio.iTrip.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\WinStudio.iTrip.ICore\WinStudio.iTrip.ICore.csproj">
+      <Project>{5365cf57-d54e-46c7-b80a-5818a0504749}</Project>
+      <Name>WinStudio.iTrip.ICore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\WinStudio.iTrip.Web.Core\WinStudio.iTrip.Web.Core.csproj">
+      <Project>{77b3424c-8111-4b8e-b1f8-a8781733f6cd}</Project>
+      <Name>WinStudio.iTrip.Web.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\core\WinStudio.iTrip.Web.ICore\WinStudio.iTrip.Web.ICore.csproj">
+      <Project>{887859ff-6979-4f46-a910-ba9669ba23f0}</Project>
+      <Name>WinStudio.iTrip.Web.ICore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\models\WinStudio.iTrip.Dto.Passport\WinStudio.iTrip.Dto.Passport.csproj">
+      <Project>{54d61706-ccf6-4d0e-9847-3cfd170028ee}</Project>
+      <Name>WinStudio.iTrip.Dto.Passport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\models\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
+      <Project>{533b7343-94d9-46b2-ac2c-43e07647bc2f}</Project>
+      <Name>WinStudio.iTrip.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutMap.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Footer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Header.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Profile\Index.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>8100</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:8225/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

@@ -1,0 +1,35 @@
+﻿<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a href="/" class="brand">iTrip</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="@WinStudio.iTrip.Framework.Passport.Permission.WebConfiguration.Instance.WebProtalAddress">Home</a></li>
+                    @if (HttpContext.Current.IsLogin())
+                    { 
+                        <li><a href="#">Welcome @HttpContext.Current.MyName()</a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Profile <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Profile/Index">Primary</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="/Account/Logout" target="_self">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="/Account/Login">Login</a></li>
+                        <li><a href="/Account/Register">Register</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

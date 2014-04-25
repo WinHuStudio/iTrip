@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4F215FFB-16A1-4855-B880-DE280696488E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iTrip.Service.Business.Passport.IAuthentication</RootNamespace>
+    <AssemblyName>iTrip.Service.Business.Passport.IAuthentication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IIdentification.cs" />
+    <Compile Include="IPubAccount.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.CommonResult\iTrip.Core.CommonResult.csproj">
+      <Project>{98af1e50-0ef3-4811-a021-354d7adbc25f}</Project>
+      <Name>iTrip.Core.CommonResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.ExceptionCode\iTrip.Core.ExceptionCode.csproj">
+      <Project>{e080075c-80ee-48b5-ab5e-076262ccf2c9}</Project>
+      <Name>iTrip.Core.ExceptionCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.Setting\iTrip.Core.Setting.csproj">
+      <Project>{ee7fdb9b-5aed-44a1-b38d-b602ce452393}</Project>
+      <Name>iTrip.Core.Setting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\iTrip.Service.Common\iTrip.Service.Common.csproj">
+      <Project>{e8ef418a-e477-4d50-a35b-0f3ac7b4c1de}</Project>
+      <Name>iTrip.Service.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

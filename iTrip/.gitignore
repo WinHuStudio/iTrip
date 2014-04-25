@@ -1,0 +1,11 @@
+bin
+gen
+obj
+lib
+
+/src/server/push/iTrip.Pusher/Logs
+*.suo
+*.pubxml
+*.user
+PublishProfiles
+publish

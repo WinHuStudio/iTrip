@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Push Server - iTrip</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="/Scripts/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="/Scripts/bootstrap/css/docs.css" rel="stylesheet" media="screen">
+    <link href="/Scripts/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <script src="/Scripts/jquery.min.js"></script>
+    <script src="/Scripts/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body data-offset="50" data-target=".subnav" data-spy="scroll">
+    @Html.Partial("Header")
+    <div id="container" class="container" style="min-height: 500px;">
+        @RenderBody()
+    </div>
+    @Html.Partial("Footer")
+</body>
+</html>

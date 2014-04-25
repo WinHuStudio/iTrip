@@ -1,0 +1,36 @@
+﻿<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a href="/" class="brand">iTrip</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li><a href="/Home/Index">Home</a></li>
+                    @if (HttpContext.Current.IsLogin())
+                    { 
+                        <li><a href="#">Welcome @HttpContext.Current.MyName()</a></li>
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Profile <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="@(WinStudio.iTrip.Framework.Passport.Permission.WebConfiguration.Instance.WebPassportAddress)/Profile/Index">Primary</a></li>
+                                <li><a href="/Map/Tripping/Index">TrippingLocation</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="@(WinStudio.iTrip.Framework.Passport.Permission.WebConfiguration.Instance.WebLogoutAddress)" target="_self">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@(WinStudio.iTrip.Framework.Passport.Permission.WebConfiguration.Instance.WebLoginAddress)">Login</a></li>
+                        <li><a href="@(WinStudio.iTrip.Framework.Passport.Permission.WebConfiguration.Instance.WebRegisterAddress)">Register</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3A02C564-89A3-48D7-859F-A3ED92B2BE61}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iTrip.TestConsoler</RootNamespace>
+    <AssemblyName>iTrip.TestConsoler</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.Security">
+      <HintPath>..\..\..\..\ref\winstudio\framework\WinStudio.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.WcfManager">
+      <HintPath>..\..\..\..\ref\winstudio\framework\wcf\WinStudio.WcfManager.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Wcf\WcfBase.cs" />
+    <Compile Include="Wcf\WcfPassport.cs" />
+    <Compile Include="Wcf\WcfStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\core\iTrip.Core.CommonResult\iTrip.Core.CommonResult.csproj">
+      <Project>{98af1e50-0ef3-4811-a021-354d7adbc25f}</Project>
+      <Name>iTrip.Core.CommonResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\dao\iTrip.StatusCenter\iTrip.StatusCenter.csproj">
+      <Project>{e0b5b752-965e-46e2-908f-30244b5c98b6}</Project>
+      <Name>iTrip.StatusCenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\service\wcf\message\iTrip.Service.Wcf.Message.IPublisherIM\iTrip.Service.Wcf.Message.IPublisherIM.csproj">
+      <Project>{b12f1774-af77-4059-ac57-0c72c6e1cd54}</Project>
+      <Name>iTrip.Service.Wcf.Message.IPublisherIM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\service\wcf\passport\iTrip.Service.Wcf.Passport.IAuthentication\iTrip.Service.Wcf.Passport.IAuthentication.csproj">
+      <Project>{f194c43e-9a83-445d-9bdd-ed43edecf03c}</Project>
+      <Name>iTrip.Service.Wcf.Passport.IAuthentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\service\wcf\relation\iTrip.Service.Wcf.Relation.ITripperRelationShipResolver\iTrip.Service.Wcf.Relation.ITripperRelationShipResolver.csproj">
+      <Project>{d6e196c7-3be5-4d89-9fbc-4ca08b69c4f0}</Project>
+      <Name>iTrip.Service.Wcf.Relation.ITripperRelationShipResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\service\wcf\status\iTrip.Service.Wcf.Status.ITripperStatusResolver\iTrip.Service.Wcf.Status.ITripperStatusResolver.csproj">
+      <Project>{4e92e103-e47c-4927-9f38-4da4f8c9ea25}</Project>
+      <Name>iTrip.Service.Wcf.Status.ITripperStatusResolver</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

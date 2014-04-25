@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "Tripping Companion";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/TripperLocation.js"></script>
+<script src="~/Scripts/MapLocator.js"></script>
+<script type="text/javascript"
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDjzSnc2O5BZxFzpU4FGo9a_RroDCVoqXI&sensor=true">
+</script>
+<div>
+    Longitude:<input type="text" id="tbMyLongitude" value="39.92" />
+    Latitude:<input type="text" id="tbMyLatitude" value="116.46" />
+    <input type="button" id="btnUpdateMyLocation" value="Update" />
+</div>
+<div id="map_canvas" style="width: 100%; min-height: 500px"></div>
+
+<script>
+    var map;
+    var MapPoints = new Array();
+    $(document).ready(function () {
+
+        var maplocator = $("#map_canvas").MapLocator();
+        maplocator.Initialize($("tbMyLongitude").val(), $("tbMyLatitude").val());
+
+        $("#btnUpdateMyLocation").on("click", function () {
+            $.get("/Location/Mine/Update",
+                { longitude: $("#tbMyLongitude").val(), latitude: $("#tbMyLatitude").val() },
+                function (data) {
+                    AddPoint($("#tbMyLatitude").val(), $("#tbMyLongitude").val());
+                });
+        });
+        var source = new EventSource("/Map/Tripping/GetTrippingCompanionLocations");
+        source.onmessage = function (event) {
+            var data = $.parseJSON(event.data);
+            $.each(data.snaps.split(','), function (i, snap) {
+                var us = snap.split('|');
+                maplocator.UpdatePoint(us[0], us[1], us[2], us[3], us[4], us[5], us[6]);
+            });
+
+        };
+        source.onopen = function (event) { console.log(event); };
+        source.onerror = function (event) { console.log(event); };
+    })
+
+</script>

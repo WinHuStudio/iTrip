@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AC6BB9F0-4872-4C46-BEC3-BC67C8219356}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.iTrip.Framework.Passport.Permission</RootNamespace>
+    <AssemblyName>WinStudio.iTrip.Framework.Passport.Permission</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.HttpExtensions">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.HttpExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.Security">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.StringExtensions">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.StringExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="NeedAuthorizedAttribute.cs" />
+    <Compile Include="WebConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reception.cs" />
+    <Compile Include="SessionManager.cs" />
+    <Compile Include="SessionSnap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\models\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
+      <Project>{533b7343-94d9-46b2-ac2c-43e07647bc2f}</Project>
+      <Name>WinStudio.iTrip.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.Core\WinStudio.iTrip.Core.csproj">
+      <Project>{bb88f23e-66f6-405d-b925-b637bbd18750}</Project>
+      <Name>WinStudio.iTrip.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.Framework.Passport.IPermission\WinStudio.iTrip.Framework.Passport.IPermission.csproj">
+      <Project>{fe43ab79-81d5-43ab-be48-e8bbe38af1c1}</Project>
+      <Name>WinStudio.iTrip.Framework.Passport.IPermission</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.ICore\WinStudio.iTrip.ICore.csproj">
+      <Project>{5365cf57-d54e-46c7-b80a-5818a0504749}</Project>
+      <Name>WinStudio.iTrip.ICore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

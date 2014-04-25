@@ -1,0 +1,41 @@
+﻿@model List<WinStudio.iTrip.Models.Nationality>
+
+@{
+    Layout = null;
+}
+@if (Model != null && Model.Count > 0)
+{
+    <input type="hidden" name="Nationality" id="SelectedNationality" />
+    <div class="btn-group" id="ddlNationality">
+        <button type="button" class="btn btn-danger" id="btnDropdownText">Nationality</button>
+        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+            <span class="caret"></span>
+            <span class="sr-only"></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            @foreach (var nation in Model)
+            {  
+                <li><a href="#" onclick="ClickDropDownItem('@nation.Code','@nation.Name')">@nation.Name</a></li>
+            }
+        </ul>
+    </div>
+    <script>
+        function ClickDropDownItem(code, name) {
+            var ddl = $("#ddlNationality");
+            $(ddl).find("#btnDropdownText").text(name);
+            $("#SelectedNationality").val(code);
+            $.get("/Comserv/Nationality/NativePlaceList", { nationCode: code }, function (data) {
+                var np = $(ddl).children().last();
+                if ($(np).attr("flag") == "NativePlaceList")
+                    np.remove();
+                $(ddl).append(data);
+            });
+        }
+        function LoadNativePlace(ctrl, code) {
+            $(ctrl).load("/Register/NativePlaces", { nationCode: code }, function () { });
+        }
+    </script>
+
+}
+
+

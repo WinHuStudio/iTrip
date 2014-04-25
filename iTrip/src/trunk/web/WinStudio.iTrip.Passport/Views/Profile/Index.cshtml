@@ -1,0 +1,99 @@
+﻿@model WinStudio.iTrip.Dto.Passport.Profile
+
+@{
+    ViewBag.Title = "Primary";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/bootstrap/js/assets/bootstrap-dropdown.js"></script>
+<script src="~/Scripts/bootstrap/js/assets/application.js"></script>
+<header id="overview" class="jumbotron subhead">
+    <h2>Profile</h2>
+    <div class="subnav">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="#myprofile">1. Profile</a></li>
+            <li class=""><a href="#mysettings">2. Settings</a></li>
+            <li class=""><a href="#mypassword">3. Password</a></li>
+        </ul>
+    </div>
+</header>
+<section id="myprofile">
+    <div class="page-header">
+        <h1>Profile</h1>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputAccount">Account</label>
+        <div class="controls">
+            <input type="text" id="inputAccount" name="UserName" placeholder="Account" value="@Model.Account" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputName">Name</label>
+        <div class="controls">
+            <input type="text" id="inputName" name="Name" placeholder="Name" value="@Model.Name"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+            <input type="text" id="inputEmail" name="Email" placeholder="Email" value="@Model.Email"/>
+        </div>
+    </div>
+</section>
+<section id="mysettings">
+    <div class="page-header">
+        <h1>Settings</h1>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+            <input type="text" id="inputEmail" name="Email" placeholder="Email" value="@Model.Email"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+            <input type="text" id="inputEmail" name="Email" placeholder="Email" value="@Model.Email"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+            <input type="text" id="inputEmail" name="Email" placeholder="Email" value="@Model.Email"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+            <input type="text" id="inputEmail" name="Email" placeholder="Email" value="@Model.Email"/>
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputEmail">Email</label>
+        <div class="controls">
+            <input type="text" id="inputEmail" name="Email" placeholder="Email" value="@Model.Email"/>
+        </div>
+    </div>
+</section>
+<section id="mypassword">
+    <div class="page-header">
+        <h1>Password</h1>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputOldPassword">OldPassword</label>
+        <div class="controls">
+            <input type="password" id="inputOldPassword" name="OldPassword" placeholder="OldPassword" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputNewPassword">NewPassword</label>
+        <div class="controls">
+            <input type="password" id="inputNewPassword" name="NewPassword" placeholder="NewPassword" />
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label" for="inputConfirmNewPassword">ConfirmNewPassword</label>
+        <div class="controls">
+            <input type="password" id="inputConfirmNewPassword" name="ConfirmNewPassword" placeholder="ConfirmNewPassword" />
+        </div>
+    </div>
+</section>

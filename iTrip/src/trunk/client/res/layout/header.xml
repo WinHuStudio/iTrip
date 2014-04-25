@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fl_header_titlebar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#079ade" >
+
+    <ImageView
+        android:id="@+id/iv_header_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/logo" />
+
+</FrameLayout>

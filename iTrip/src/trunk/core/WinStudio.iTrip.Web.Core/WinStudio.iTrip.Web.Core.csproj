@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{77B3424C-8111-4B8E-B1F8-A8781733F6CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.iTrip.Web.Core</RootNamespace>
+    <AssemblyName>WinStudio.iTrip.Web.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutofacAutoResolver, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\framework\AutofacAutoResolver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\..\..\ref\thirdparty\log4net\log4net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.AssemblyUtility">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.AssemblyUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.ComResult, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.ComResult.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WinStudio.DynamicLogger">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.DynamicLogger.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WinStudio.HttpExtensions">
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.HttpExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="WinStudio.StringExtensions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\ref\winstudio\libs\WinStudio.StringExtensions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Filter\NeedLocationAttribute.cs" />
+    <Compile Include="Mvc\iTripWebController.cs" />
+    <Compile Include="Permission\PassportUserSnapLoader.cs" />
+    <Compile Include="Permission\iTripWebUserSnapLoader.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebUserSnap.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\business\permission\passport\WinStudio.iTrip.Permission.IPassport\WinStudio.iTrip.Permission.IPassport.csproj">
+      <Project>{2641872a-cf0f-4c48-b8c4-28e1b902b9ef}</Project>
+      <Name>WinStudio.iTrip.Permission.IPassport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\business\permission\passport\WinStudio.iTrip.Permission.PassportService\WinStudio.iTrip.Permission.PassportService.csproj">
+      <Project>{e22e5e31-4acd-46e0-af47-ea7ae2e8e6c3}</Project>
+      <Name>WinStudio.iTrip.Permission.PassportService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\business\WinStudio.iTrip.Business.Core\WinStudio.iTrip.Business.Core.csproj">
+      <Project>{104263c3-cc1a-4f5b-a931-9d56b840a59a}</Project>
+      <Name>WinStudio.iTrip.Business.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\business\WinStudio.iTrip.Business.ICore\WinStudio.iTrip.Business.ICore.csproj">
+      <Project>{fd417f1c-82b0-4c6e-8e65-165de5bdec40}</Project>
+      <Name>WinStudio.iTrip.Business.ICore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\models\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
+      <Project>{533b7343-94d9-46b2-ac2c-43e07647bc2f}</Project>
+      <Name>WinStudio.iTrip.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.Core\WinStudio.iTrip.Core.csproj">
+      <Project>{bb88f23e-66f6-405d-b925-b637bbd18750}</Project>
+      <Name>WinStudio.iTrip.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.Framework.Passport.IPermission\WinStudio.iTrip.Framework.Passport.IPermission.csproj">
+      <Project>{fe43ab79-81d5-43ab-be48-e8bbe38af1c1}</Project>
+      <Name>WinStudio.iTrip.Framework.Passport.IPermission</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.Framework.Passport.Permission\WinStudio.iTrip.Framework.Passport.Permission.csproj">
+      <Project>{ac6bb9f0-4872-4c46-bec3-bc67c8219356}</Project>
+      <Name>WinStudio.iTrip.Framework.Passport.Permission</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.ICore\WinStudio.iTrip.ICore.csproj">
+      <Project>{5365cf57-d54e-46c7-b80a-5818a0504749}</Project>
+      <Name>WinStudio.iTrip.ICore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.Web.ICore\WinStudio.iTrip.Web.ICore.csproj">
+      <Project>{887859ff-6979-4f46-a910-ba9669ba23f0}</Project>
+      <Name>WinStudio.iTrip.Web.ICore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

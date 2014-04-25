@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="normalText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">#444</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="FullHeightDialog" parent="android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <!-- <item name="android:windowBackground">@drawable/dialog</item> -->
+    </style>
+
+    <style name="AnimationActivity" mce_bogus="1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/push_left_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/push_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/push_left_back_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_left_back_out</item>
+    </style>
+
+    <style name="textViewText_18_gray">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/darker_gray</item>
+    </style>
+
+    <style name="textViewText_18_black">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+    <style name="normalpageStyle">
+        <item name="android:background">@drawable/bg_2</item>
+    </style>
+
+    <style name="verticalPageStyle" parent="@style/normalpageStyle">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- <style name="back_blue"> -->
+    <!-- <item name="android:background">@drawable/schoolcard_backto_blue</item> -->
+    <!-- </style> -->
+
+
+    <!-- <style name="set_blue"> -->
+    <!-- <item name="android:background">@drawable/schoolcard_set_blue</item> -->
+    <!-- </style> -->
+
+    <style name="welcome_bg_blue">
+        <item name="android:background">@drawable/loading_bg</item>
+    </style>
+
+    <!-- <style name="top_bg_blue"> -->
+    <!-- <item name="android:background">@drawable/schoolcard_top_blue</item> -->
+    <!-- </style> -->
+
+    <style name="main_bg_blue">
+        <item name="android:background">@drawable/main_bg_blue</item>
+    </style>
+
+    <style name="power_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#595959</item>
+    </style>
+
+    <!-- <style name="radioButton1"> -->
+    <!-- <item name="android:layout_width">fill_parent</item> -->
+    <!-- <item name="android:layout_height">fill_parent</item> -->
+    <!-- <item name="android:layout_weight">1</item> -->
+    <!-- <item name="android:padding">10dp</item> -->
+    <!-- <item name="android:gravity">center</item> -->
+    <!-- <item name="android:background">@drawable/radiobtn_selector1</item> -->
+    <!-- <item name="android:textColor">@android:color/black</item> -->
+    <!-- <item name="android:button">@null</item> -->
+    <!-- </style> -->
+
+
+    <!-- <style name="radioButton2"> -->
+    <!-- <item name="android:layout_width">fill_parent</item> -->
+    <!-- <item name="android:layout_height">fill_parent</item> -->
+    <!-- <item name="android:layout_weight">1</item> -->
+    <!-- <item name="android:padding">10dp</item> -->
+    <!-- <item name="android:gravity">center</item> -->
+    <!-- <item name="android:background">@drawable/radiobtn_selector2</item> -->
+    <!-- <item name="android:textColor">@android:color/black</item> -->
+    <!-- <item name="android:button">@null</item> -->
+    <!-- </style> -->
+
+
+    <!-- <style name="table_left_style"> -->
+    <!-- <item name="android:layout_width">100dip</item> -->
+    <!-- <item name="android:layout_height">match_parent</item> -->
+    <!-- <item name="android:layout_marginLeft">0.5dip</item> -->
+    <!-- <item name="android:background">@color/sc_lbg</item> -->
+    <!-- <item name="android:gravity">right|center_vertical</item> -->
+    <!-- <item name="android:padding">10dip</item> -->
+    <!-- <item name="android:textColor">@android:color/black</item> -->
+    <!-- <item name="android:textSize">15sp</item> -->
+    <!-- </style> -->
+
+
+    <style name="table_right_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginLeft">0.5dip</item>
+        <item name="android:layout_marginRight">0.5dip</item>
+        <item name="android:layout_weight">3</item>
+        <item name="android:background">@color/sc_rbg</item>
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:padding">10dip</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+</resources>

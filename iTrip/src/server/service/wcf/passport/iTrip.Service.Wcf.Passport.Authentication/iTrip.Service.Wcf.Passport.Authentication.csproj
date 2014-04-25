@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6B668226-8800-4FD1-9B5C-07BCB63E6F6D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iTrip.Service.Wcf.Passport.Authentication</RootNamespace>
+    <AssemblyName>iTrip.Service.Wcf.Passport.Authentication</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Repository">
+      <HintPath>..\..\..\..\..\..\ref\winstudio\framework\MongoDB.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.WcfFlag">
+      <HintPath>..\..\..\..\..\..\ref\winstudio\framework\wcf\WinStudio.WcfFlag.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PubAccountManager.cs" />
+    <Compile Include="ServiceAuthenticationReception.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.CommonResult\iTrip.Core.CommonResult.csproj">
+      <Project>{98af1e50-0ef3-4811-a021-354d7adbc25f}</Project>
+      <Name>iTrip.Core.CommonResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.ExceptionCode\iTrip.Core.ExceptionCode.csproj">
+      <Project>{e080075c-80ee-48b5-ab5e-076262ccf2c9}</Project>
+      <Name>iTrip.Core.ExceptionCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.Setting\iTrip.Core.Setting.csproj">
+      <Project>{ee7fdb9b-5aed-44a1-b38d-b602ce452393}</Project>
+      <Name>iTrip.Core.Setting</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\dao\iTrip.Model\iTrip.Model.csproj">
+      <Project>{ee84f726-a936-4f40-a407-d3ae5fbc6a0c}</Project>
+      <Name>iTrip.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\dao\iTrip.TripperCenter\iTrip.TripperCenter.csproj">
+      <Project>{b5ffb266-e94a-436f-abbc-e98fbaf28f68}</Project>
+      <Name>iTrip.TripperCenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\business\passport\iTrip.Service.Business.Passport.Authentication\iTrip.Service.Business.Passport.Authentication.csproj">
+      <Project>{34580307-a4d5-4dae-8e0d-b755769dd7cd}</Project>
+      <Name>iTrip.Service.Business.Passport.Authentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\business\passport\iTrip.Service.Business.Passport.IAuthentication\iTrip.Service.Business.Passport.IAuthentication.csproj">
+      <Project>{4f215ffb-16a1-4855-b880-de280696488e}</Project>
+      <Name>iTrip.Service.Business.Passport.IAuthentication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\iTrip.Service.Common.Wcf\iTrip.Service.Common.Wcf.csproj">
+      <Project>{a88b4aa3-50e3-46d7-b17c-f16b69503b42}</Project>
+      <Name>iTrip.Service.Common.Wcf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\iTrip.Service.Common\iTrip.Service.Common.csproj">
+      <Project>{e8ef418a-e477-4d50-a35b-0f3ac7b4c1de}</Project>
+      <Name>iTrip.Service.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\iTrip.Service.DaoRespository\iTrip.Service.DaoRespository.csproj">
+      <Project>{4850db28-3843-4d28-a694-a03668d06463}</Project>
+      <Name>iTrip.Service.DaoRespository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\message\iTrip.Service.Wcf.Message.IPublisherIM\iTrip.Service.Wcf.Message.IPublisherIM.csproj">
+      <Project>{b12f1774-af77-4059-ac57-0c72c6e1cd54}</Project>
+      <Name>iTrip.Service.Wcf.Message.IPublisherIM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\relation\iTrip.Service.Wcf.Relation.ITripperRelationShipResolver\iTrip.Service.Wcf.Relation.ITripperRelationShipResolver.csproj">
+      <Project>{d6e196c7-3be5-4d89-9fbc-4ca08b69c4f0}</Project>
+      <Name>iTrip.Service.Wcf.Relation.ITripperRelationShipResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\status\iTrip.Service.Wcf.Status.ITripperStatusResolver\iTrip.Service.Wcf.Status.ITripperStatusResolver.csproj">
+      <Project>{4e92e103-e47c-4927-9f38-4da4f8c9ea25}</Project>
+      <Name>iTrip.Service.Wcf.Status.ITripperStatusResolver</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iTrip.Service.Wcf.Passport.IAuthentication\iTrip.Service.Wcf.Passport.IAuthentication.csproj">
+      <Project>{f194c43e-9a83-445d-9bdd-ed43edecf03c}</Project>
+      <Name>iTrip.Service.Wcf.Passport.IAuthentication</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

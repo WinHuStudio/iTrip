@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D6E9527C-A4E1-4F64-8852-ABA56D8824C6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iTrip.Service.Business.Message.IPackageReception</RootNamespace>
+    <AssemblyName>iTrip.Service.Business.Message.IPackageReception</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="IHolderResolver.cs" />
+    <Compile Include="IPackageDealer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.CommonResult\iTrip.Core.CommonResult.csproj">
+      <Project>{98af1e50-0ef3-4811-a021-354d7adbc25f}</Project>
+      <Name>iTrip.Core.CommonResult</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\iTrip.Core.ExceptionCode\iTrip.Core.ExceptionCode.csproj">
+      <Project>{e080075c-80ee-48b5-ab5e-076262ccf2c9}</Project>
+      <Name>iTrip.Core.ExceptionCode</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\dao\iTrip.DeliveryCenter\iTrip.DeliveryCenter.csproj">
+      <Project>{408b0662-c089-421b-934b-6523221153c8}</Project>
+      <Name>iTrip.DeliveryCenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\dao\iTrip.Model\iTrip.Model.csproj">
+      <Project>{ee84f726-a936-4f40-a407-d3ae5fbc6a0c}</Project>
+      <Name>iTrip.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\protocol\iTrip.iPP.IProxy\iTrip.iPP.IProxy.csproj">
+      <Project>{4097c231-edf4-4eb4-ae7e-c4d6a87f78e4}</Project>
+      <Name>iTrip.iPP.IProxy</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\iTrip.Service.Common\iTrip.Service.Common.csproj">
+      <Project>{e8ef418a-e477-4d50-a35b-0f3ac7b4c1de}</Project>
+      <Name>iTrip.Service.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

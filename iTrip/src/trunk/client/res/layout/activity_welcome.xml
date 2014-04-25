@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ImageView
+        android:id="@+id/iv_welcome"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ff00ff" />
+
+    <LinearLayout
+        android:id="@+id/welcome"
+        style="@style/welcome_bg_blue"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/xiadaloading" />
+
+        <!--
+             <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="@drawable/xiada_welcome" />
+        -->
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/CustomprogressBar"
+        android:layout_width="83dp"
+        android:layout_height="15dip"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="30dip"
+        android:indeterminate="false"
+        android:indeterminateDrawable="@drawable/welcome_progress" />
+
+</FrameLayout>

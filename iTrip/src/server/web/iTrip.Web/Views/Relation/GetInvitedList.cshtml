@@ -1,0 +1,49 @@
+﻿@model IEnumerable<string>
+@{
+    Layout = null;
+    ViewBag.Title = "GetInvitedList";
+}
+@if (Model == null || Model.Count() < 1)
+{
+    <span>暂无好友申请</span>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>选择</th>
+                <th>账号</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (string item in Model)
+            {
+                <tr account="@item">
+                    <td>
+                        <input type="checkbox" /></td>
+                    <td>@item</td>
+                    <td><a class="agree">同意</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<script type="text/javascript">
+    $(function () {
+        //同意添加好友
+        $(".agree").on("click", function () {
+            var currentAccount = $("#tbMyAccount").val().trim();
+            if (currentAccount.length < 1) { alert("请输入账号"); $("#tbMyAccount").focus(); return; }
+            var inviterAccount = $(this).parent().parent().attr("account");
+            $.post("/Relation/AgreeInvitation",
+                { currentAccount: currentAccount, inviterAccount: inviterAccount },
+                function (data) {
+                    data = $.parseJSON(data);
+                    alert(data.msg);
+                })
+        });
+    });
+
+</script>

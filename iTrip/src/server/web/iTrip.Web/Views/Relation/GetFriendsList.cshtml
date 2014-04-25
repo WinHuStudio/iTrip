@@ -1,0 +1,49 @@
+﻿@model IEnumerable<string>
+@{
+    Layout = null;
+    ViewBag.Title = "GetFriendsList";
+}
+@if (Model == null || Model.Count() < 1)
+{
+    <span>暂无好友</span>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>选择</th>
+                <th>账号</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (string item in Model)
+            {
+                <tr account="@item">
+                    <td>
+                        <input type="checkbox" /></td>
+                    <td>@item</td>
+                    <td><a class="unfriend">解除好友关系</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<script type="text/javascript">
+    $(function () {
+        //解除好友关系
+        $(".unfriend").on("click", function () {
+            var currentAccount = $("#tbMyAccount").val().trim();
+            if (currentAccount.length < 1) { alert("请输入账号"); $("#tbMyAccount").focus(); return; }
+            var friendAccount = $(this).parent().parent().attr("account");
+            $.post("/Relation/Unfriend",
+                { currentAccount: currentAccount, friendAccount: friendAccount },
+                function (data) {
+                    data = $.parseJSON(data);
+                    alert(data.msg);
+                })
+        });
+    });
+
+</script>

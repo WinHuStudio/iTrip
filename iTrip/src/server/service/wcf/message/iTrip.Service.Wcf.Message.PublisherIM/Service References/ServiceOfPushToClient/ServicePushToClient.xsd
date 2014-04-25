@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/iTrip.iPP.Proxy" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/iTrip.iPP.Proxy" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://itripping.cn:9100/ServicePushToClient.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="ArrayOfipp_Package">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ipp_Package" nillable="true" type="tns:ipp_Package" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfipp_Package" nillable="true" type="tns:ArrayOfipp_Package" />
+  <xs:complexType name="ipp_Package">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IPPV" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PC" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="PCC" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PCL" type="xs:int" />
+      <xs:element minOccurs="0" name="PCN" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PCT" type="xs:int" />
+      <xs:element minOccurs="0" name="PD" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="PR" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PS" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PT" type="xs:int" />
+      <xs:element minOccurs="0" name="UID" type="ser:guid" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ipp_Package" nillable="true" type="tns:ipp_Package" />
+</xs:schema>

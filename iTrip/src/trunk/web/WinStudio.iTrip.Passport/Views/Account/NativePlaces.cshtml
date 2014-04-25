@@ -1,0 +1,19 @@
+﻿@model List<WinStudio.iTrip.Models.NativePlace>
+
+@if (Model != null && Model.Count > 0)
+{
+    
+    <div class="btn-group" flag="NativePlaceList">
+        @foreach (var native in Model)
+        { 
+            <button class="btn" onclick="ClickNativePlace('@native.Code')" code="@native.Code">@native.Name</button>    
+        }
+    </div>
+    
+    <script>
+        function ClickNativePlace(code) {
+
+        }
+
+    </script>
+}

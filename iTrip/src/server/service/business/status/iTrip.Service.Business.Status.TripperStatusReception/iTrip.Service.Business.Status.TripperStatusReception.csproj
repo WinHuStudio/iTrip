@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2078761F-FC77-49C1-B499-D8922EAE998F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>iTrip.Service.Business.Status.TripperStatusReception</RootNamespace>
+    <AssemblyName>iTrip.Service.Business.Status.TripperStatusReception</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Repository">
+      <HintPath>..\..\..\..\..\..\ref\winstudio\framework\MongoDB.Repository.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TripperStatusManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\dao\iTrip.Model\iTrip.Model.csproj">
+      <Project>{ee84f726-a936-4f40-a407-d3ae5fbc6a0c}</Project>
+      <Name>iTrip.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\dao\iTrip.StatusCenter\iTrip.StatusCenter.csproj">
+      <Project>{e0b5b752-965e-46e2-908f-30244b5c98b6}</Project>
+      <Name>iTrip.StatusCenter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\iTrip.Service.Common\iTrip.Service.Common.csproj">
+      <Project>{e8ef418a-e477-4d50-a35b-0f3ac7b4c1de}</Project>
+      <Name>iTrip.Service.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\common\iTrip.Service.DaoRespository\iTrip.Service.DaoRespository.csproj">
+      <Project>{4850db28-3843-4d28-a694-a03668d06463}</Project>
+      <Name>iTrip.Service.DaoRespository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\iTrip.Service.Business.Status.ITripperStatusReception\iTrip.Service.Business.Status.ITripperStatusReception.csproj">
+      <Project>{732df672-e648-466a-9a95-9e42056cb4fc}</Project>
+      <Name>iTrip.Service.Business.Status.ITripperStatusReception</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

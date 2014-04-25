@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="abc9c978-a335-4d0a-ba76-09c826a83fe9" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://iTripping.cn:9100/ServicePushToClient.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServicePushToClient.xsd" MetadataType="Schema" ID="afa91abc-5095-4114-9e9e-87b6c1691f01" SourceId="1" SourceUrl="http://itripping.cn:9100/ServicePushToClient.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServicePushToClient.wsdl" MetadataType="Wsdl" ID="56a25e81-656a-46ed-89e8-cf78dbceb06b" SourceId="1" SourceUrl="http://itripping.cn:9100/ServicePushToClient.svc?wsdl" />
+    <MetadataFile FileName="ServicePushToClient1.xsd" MetadataType="Schema" ID="4c8b1ebe-9bf3-4821-aad4-1855fdee3649" SourceId="1" SourceUrl="http://itripping.cn:9100/ServicePushToClient.svc?xsd=xsd1" />
+    <MetadataFile FileName="ServicePushToClient2.xsd" MetadataType="Schema" ID="8754bddc-943a-441f-9e9e-3d068a2ad3d4" SourceId="1" SourceUrl="http://itripping.cn:9100/ServicePushToClient.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServicePushToClient.disco" MetadataType="Disco" ID="36a1df68-e03f-4e44-aa16-86f2d9c65b25" SourceId="1" SourceUrl="http://itripping.cn:9100/ServicePushToClient.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

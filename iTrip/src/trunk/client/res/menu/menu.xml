@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:id="@+id/menu_group_main">
+        <item android:id="@+id/menu_item_1" android:title="主页" android:orderInCategory="1"  android:background="#66FFFFFF"></item>
+        <item android:id="@+id/menu_item_2" android:title="退出" android:orderInCategory="2"  android:background="#66FFFFFF"></item>
+        <item android:id="@+id/menu_item_3" android:title="设置" android:orderInCategory="3"  android:background="#66FFFFFF"></item>
+        
+    </group>
+
+</menu>

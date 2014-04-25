@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"    
+       android:oneshot="false" android:visible="true">  
+     <item android:drawable="@drawable/dot12x" android:duration="200" />   
+     <item android:drawable="@drawable/dot22x" android:duration="200" />   
+     <item android:drawable="@drawable/dot32x" android:duration="200" />   
+     <item android:drawable="@drawable/dot42x" android:duration="200" />   
+     <item android:drawable="@drawable/dot52x" android:duration="200" />   
+     <item android:drawable="@drawable/dot62x" android:duration="200" />     
+</animation-list>

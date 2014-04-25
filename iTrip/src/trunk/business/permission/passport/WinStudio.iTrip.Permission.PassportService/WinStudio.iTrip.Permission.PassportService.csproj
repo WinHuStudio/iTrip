@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E22E5E31-4ACD-46E0-AF47-EA7AE2E8E6C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WinStudio.iTrip.Permission.PassportService</RootNamespace>
+    <AssemblyName>WinStudio.iTrip.Permission.PassportService</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutofacAutoResolverFlag">
+      <HintPath>..\..\..\..\..\..\ref\winstudio\framework\AutofacAutoResolverFlag.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Bson">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Bson.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Driver">
+      <HintPath>..\..\..\..\..\..\ref\thirdparty\mongo\MongoDB.Driver.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="MongoDB.Repository">
+      <HintPath>..\..\..\..\..\..\ref\winstudio\framework\MongoDB.Repository.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinStudio.ComResult">
+      <HintPath>..\..\..\..\..\..\ref\winstudio\libs\WinStudio.ComResult.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="WinStudio.Security, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\ref\winstudio\libs\WinStudio.Security.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ProfileService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\core\WinStudio.iTrip.Core\WinStudio.iTrip.Core.csproj">
+      <Project>{bb88f23e-66f6-405d-b925-b637bbd18750}</Project>
+      <Name>WinStudio.iTrip.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\WinStudio.iTrip.Framework\WinStudio.iTrip.Framework.csproj">
+      <Project>{4e048050-79d1-494d-946f-4e8b000dff4d}</Project>
+      <Name>WinStudio.iTrip.Framework</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\core\WinStudio.iTrip.ICore\WinStudio.iTrip.ICore.csproj">
+      <Project>{5365cf57-d54e-46c7-b80a-5818a0504749}</Project>
+      <Name>WinStudio.iTrip.ICore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\models\WinStudio.iTrip.Dto.Passport\WinStudio.iTrip.Dto.Passport.csproj">
+      <Project>{54d61706-ccf6-4d0e-9847-3cfd170028ee}</Project>
+      <Name>WinStudio.iTrip.Dto.Passport</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\models\WinStudio.iTrip.Models\WinStudio.iTrip.Models.csproj">
+      <Project>{533b7343-94d9-46b2-ac2c-43e07647bc2f}</Project>
+      <Name>WinStudio.iTrip.Models</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\WinStudio.iTrip.Business.Core\WinStudio.iTrip.Business.Core.csproj">
+      <Project>{104263c3-cc1a-4f5b-a931-9d56b840a59a}</Project>
+      <Name>WinStudio.iTrip.Business.Core</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\WinStudio.iTrip.Business.ICore\WinStudio.iTrip.Business.ICore.csproj">
+      <Project>{fd417f1c-82b0-4c6e-8e65-165de5bdec40}</Project>
+      <Name>WinStudio.iTrip.Business.ICore</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\WinStudio.iTrip.Permission.IPassport\WinStudio.iTrip.Permission.IPassport.csproj">
+      <Project>{2641872a-cf0f-4c48-b8c4-28e1b902b9ef}</Project>
+      <Name>WinStudio.iTrip.Permission.IPassport</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

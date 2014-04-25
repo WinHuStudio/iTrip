@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Demo Index";
+}
+
+<h2>Index</h2>
+Account:<input type="text" id="tbAccount" /><br />
+Password:<input type="text" id="tbPassword" /><br />
+ClienteType:<input type="radio" name="rbClientType" value="Android" />Android
+<input type="radio" name="rbClientType" value="iOS" />iOS<br />
+ClienteSN:<input type="text" id="tbClientSN" /><br />
+<label id="lbTicket">ticket</label>
+<input type="button" id="btnLogin" value="Login" />
+<input type="button" id="btnRegister" value="Register" />
+<input type="button" id="btnCheckTicket" value="CheckTicket" />
+<input type="button" id="btnLogout" value="Logout" />
+
+<script>
+    $(document).ready(function () {
+        $("#btnLogin").on("click", function () {
+            var acc = $("#tbAccount").val();
+            var pwd = $("#tbPassword").val();
+            var cty = $(":radio[name='rbClientType']").val();
+            var csn = $("#tbClientSN").val();
+            $.post("/Account/Login", { account: acc, password: pwd, clientype: cty, clientsn: csn },
+                function (data) {
+                    data = jQuery.parseJSON(data);
+                    if (data.ret) {
+                        $("#lbTicket").text(data.msg);
+                    } else {
+                        alert(data.msg);
+                    }
+                });
+        })
+        $("#btnLogout").on("click", function () {
+            var ticket = $("#lbTicket").text();
+            $.post("/Account/Logout",
+                { ticket: ticket },
+                function (data) {
+                    data = jQuery.parseJSON(data);
+                    if (data.ret) {
+                        $("#lbTicket").text('logout');
+                    } else {
+                        alert(data.msg);
+                    }
+                });
+        })
+        $("#btnRegister").on("click", function () {
+            var acc = $("#tbAccount").val();
+            var pwd = $("#tbPassword").val();
+            $.post("/Account/Register",
+                { account: acc, password: pwd },
+                function (data) {
+                    console.log(data);
+                })
+        })
+        $("#btnCheckTicket").on("click", function () {
+            var ticket = $("#lbTicket").text();
+            $.post("/Account/CheckTicket",
+                { ticket: ticket },
+                function (data) {
+                    if (data.ret) {
+                        alert("your ticket is good");
+                    } else {
+                        alert("your ticket is bad");
+                    }
+                })
+        })
+    })
+
+</script>
